@@ -2,7 +2,7 @@ from typing import Annotated
 
 from fastapi import APIRouter, Path
 
-router = APIRouter(prefix="/items")
+router = APIRouter(prefix="/items", tags=["items"])
 
 @router.get("/")
 def list_items():
