@@ -16,20 +16,17 @@ app.include_router(users_router)
 def hello_index():
     return {"message": "Hello World"}
 
+
 @app.get("/hello/")
 def hello(name: str = "World"):
     name = name.strip().title()
     return {"message": f"Hello {name}"}
 
 
-
 @app.post("/calc/add/")
 def add(a: int, b: int):
-    return {
-        "a": a,
-        "b": b,
-        "result": a + b
-    }
+    return {"a": a, "b": b, "result": a + b}
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
